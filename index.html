@@ -1,0 +1,261 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Hytale Discord Bot - Suivez les news Hytale FR</title>
+    <meta name="og:site_name" content="HytaleBot">
+    <meta property="og:title" content="Hytale Discord Bot - Suivez les news Hytale">
+    <meta name="twitter:title" content="Hytale Discord Bot - Suivez les news Hytale">
+
+    <meta name="description" content="Invitez HytaleBot sur votre serveur Discord et suivez en tout simplicité les news d'Hytale en français.">
+    <meta property="og:description" content="Invitez HytaleBot sur votre serveur Discord et suivez en tout simplicité les news d'Hytale en français.">
+    <meta name="twitter:description" content="Invitez HytaleBot sur votre serveur Discord et suivez en tout simplicité les news d'Hytale en français.">
+
+    <meta property="og:image" content="https://hytale-discord.fr/hytalebot.png">
+    <meta name="twitter:image" content="https://hytale-discord.fr/hytalebot.png">
+
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr">
+    <meta name="viewport" content="maximum-scale=1" />
+
+    <link rel="canonical" href="https://hytale-discord.fr/">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" as="style">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+
+    <style>
+        body {
+            background-color: #15243a;
+            font-size: 16px !important;
+            font-family: "Noto Sans", sans-serif;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        .list-inline {
+            border-top: 2px solid #15243a;
+            border-right: 2px solid #15243a;
+            border-bottom: 2px solid #15243a;
+            border-left: 2px solid #15243a;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #4e5765;
+            flex: 1 0 0;
+            position: relative;
+            height: 3em;
+            margin: 1.6em 0 0 0;
+            padding: 0 0 0 .5em;
+            border-width: 1px;
+            border-radius: 5px;
+            background: #203658;
+            font-size: .9em;
+        }
+
+        .list-inline li {
+            line-height: 3em;
+            color: #b7cedd;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .list-inline li a {
+            padding: 0 0.5em;
+            color: #f5fbff;
+            text-transform: uppercase;
+            line-height: 3em;
+            font-weight: 600;
+        }
+
+        .list-inline li a:hover {
+            color: #b7cedd;
+            text-decoration: none;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #f5fbff;
+            text-transform: uppercase;
+            line-height: 24px;
+            background: linear-gradient(#f5fbff, #bfe6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            display: block;
+            font-size: 2em;
+            margin-block-start: 0.7em;
+            margin-block-end: 0.7em;
+            font-weight: bold;
+        }
+
+        section.row {
+            border-top: 2px solid #15243a;
+            border-right: 2px solid #15243a;
+            border-bottom: 2px solid #15243a;
+            border-left: 2px solid #15243a;
+            margin: 1.6em 0 0 0;
+            padding: 1.6em .6em 1.6em .6em;
+            border-width: 1px;
+            border-radius: 5px;
+            background: #203658;
+            font-size: .9em;
+            color: #a5b9c6;
+        }
+
+        .button {
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 2px;
+            white-space: nowrap;
+            border-radius: 5px;
+            border: 0;
+            background: #816632;
+            cursor: pointer;
+        }
+
+        .button__topDecorations::before {
+            top: 4px;
+            left: 4px;
+        }
+        .button__topDecorations::after {
+            top: 4px;
+            right: 4px;
+            transform: rotate(90deg);
+        }
+        .button__bottomDecorations::before {
+            bottom: 4px;
+            left: 4px;
+            transform: rotate(-90deg);
+        }
+        .button__bottomDecorations::after {
+            right: 4px;
+            bottom: 4px;
+            transform: rotate(180deg);
+        }
+        .button__inner {
+            display: block;
+            position: relative;
+            border-radius: 3px;
+            padding: 2px;
+        }
+        .button__inner__label {
+            display: block;
+            position: relative;
+            z-index: 101;
+            padding: 0 1.6em 0 1.6em;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 2.6;
+            height: 2.6em;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+        .button__inner__highlight {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+            border-radius: 2px;
+            border: 1px solid rgba(217, 177, 103, 0.45);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.08));
+            padding: .5em 1.6em;
+        }
+        .button__inner__highlight, .button__inner:before, .button__inner:after {
+            display: block;
+            opacity: 0;
+            transition: opacity .08s;
+            will-change: opacity;
+        }
+        .button--primary .button__inner {
+            background: linear-gradient(to bottom, #3c91c5, #225b8b);
+            box-shadow: inset 0 0 0 2px #060b11;
+        }
+
+        .button--small {
+            font-size: .7em;
+            padding: 2px !important;
+            margin-top: 4px;
+            margin-right: 4px;
+        }
+
+        .button--secondary .button__inner {
+            background: linear-gradient(to bottom, #262d35, #121519);
+            box-shadow: inset 0 0 0 2px #060b11, inset 0 0 0 3px rgba(127, 100, 49, 0.3);
+        }
+        .button--secondary .button__inner:before {
+            background: linear-gradient(to right, rgba(35, 45, 65, 0.7), rgba(35, 45, 65, 0));
+        }
+        .button--secondary .button__inner:after {
+            background: linear-gradient(to left, rgba(35, 45, 65, 0.7), rgba(35, 45, 65, 0));
+        }
+
+        h2 {
+            margin: 50px 0 .5em 0;
+            font-size: 1em;
+            color: #d29f32;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="" style="height: 50px; border-bottom: 1px solid #715e2b; ">
+            <h1>Hytale Bot Discord</h1>
+        </div>
+    </header>
+
+    <div style=" background-color: #1e273f; height: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <a href="#">
+                                Bot Discord Hytale
+                            </a>
+                        </li>
+                        <li class="float-right">
+                            <a href="#" class="button button--primary button--small button--iconLeft"><span class="button__topDecorations"></span> <span class="button__bottomDecorations"></span> <span class="button__inner"><span class="button__inner__label">Inviter HytaleBot</span> <span class="button__inner__highlight"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="row">
+                <div class="col">
+                    <p>
+                        Bonjour !
+                    </p>
+                    <p>
+                        Vous voulez suivre l'actualité du jeu Hytale sur votre Discord favori ? HytaleBot est un bot simple et léger qui permet <b>d'afficher les dernières actualités du jeu Hytale</b> en français.
+                    </p>
+
+                    <p>
+                        Les articles proviennent de notre partenaire <a target="_blank" href="https://hytale.game/">Hytale.game</a>, un site communautaire francophone sur le jeu <a target="_blank" href="https://hytale.game/hytale/">Hytale</a>.
+                    </p>
+
+                    <div class="text-center" style="margin-top: 30px;">
+                        <a href="#" class="button button--secondary button--medium button--iconLeft"><span class="button__topDecorations"></span> <span class="button__bottomDecorations"></span> <span class="button__inner"><span class="button__inner__label">Inviter HytaleBot sur Discord</span> <span class="button__inner__highlight"></span></span></a>
+                    </div>
+
+                    <h2 class="text-uppercase">Utilisation du bot</h2>
+                    <p>
+                        Obtenez les dernières news sur Hytale avec la commande <code>h!news</code>. Vous pouvez envoyer la commande en message privé ou dans un channel.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
